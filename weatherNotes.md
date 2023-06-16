@@ -1,0 +1,31 @@
+- Notes for Weather App that I need to implement:
+    - Need to use location to be able to get local data of a user and auto populate the forecast / weather tab.
+    - Implement pagination for the cards being rendered on zip search.
+    - Include a search by City
+        - Maybe populate this data from an API and it can be a dropdown?
+
+    - On the Home page, make it display brief weather conditions for major cities
+        - San Diego, Los Angeles, San Francisco, Dallas, Houston, Austin, Atlanta, NYC, Boston, Chicago, Denver, Washington D.C., Phoenix
+        - Make all these clickable so it brings you to a more detailed view.
+    - Change color schema
+    - Change font to Solis - DONE
+    - In the header, they can just be links to heatmaps
+        - Temperature, humidity, wind, air quality, maybe something else.
+        - Can have a "Contact" page that brings someone to a form to fill out to send me feedback or something.
+    - Can have the home page display all data in seperate tabs. i.e. Today, Hourly, 10 Day, Weekend, 15 day, etc.
+        - Could link to other pages that access this data on document load.
+        - Or could just replace the div that contains that data with the updated data.
+        - Today
+            - Have a morning forecast, user scrolls down to see the afternoon/evening, then overnight
+        - Hourly
+            - Have an "As of {Time User Accessed Data}" So the user knows it was last updated the second they visited the page.
+            - Have a row for each hour. This can include time, temp, an icon representing the sun, cloud status (partly cloudy) wind, precipitation chance
+            - Upon a user clicking this they can see the feels like, wind, humidity, UV index, cloud cover, and precipitation amount.
+        - 10 Day
+            - Same format as the hourly but for the day.
+        - Weekend
+            - Same format as hourly but for this weekend. Include Friday, Saturday, Sunday. 
+            - When the user clicks on it, expand it to show 2 columns, one displaying conditions during the day, one during the night.
+            - Have next weekend weather data too, seperated by a strong tag.
+        - 15 Day 
+            - Same format as 10 Day. Could even maybe do a calendar format?

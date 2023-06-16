@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/your-css-file.css">
+
+    <style>
+        @font-face {
+            font-family: 'Solis';
+            src: url('fonts/Solis-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Solis', sans-serif;
+        }
+
+        .bg-image {
+            background-image: url('https://i.pinimg.com/originals/90/8f/85/908f85a2a697efbf515e3602320960e1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
+</head>
+
+<body class="bg-image text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-blue-500">
+        <div class="container mx-auto px-4 py-2">
+            <div class="flex items-center justify-between">
+                <div class="text-white text-lg font-bold">WeatherWise</div>
+                <div class="flex space-x-4">
+                    <a href="search.html" class="text-gray-200 hover:text-white">Search</a>
+                    <a href="#" class="text-gray-200 hover:text-white">About</a>
+                    <a href="#" class="text-gray-200 hover:text-white">Services</a>
+                    <a href="#" class="text-gray-200 hover:text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex-1 container mx-auto px-4 py-8">
+        <div class="grid grid-cols-3 gap-8">
+            <!-- Sidebar -->
+            <div class="col-span-1">
+                <div class="bg-white rounded-lg p-4 h-full">
+                    <h2 class="text-2xl font-bold mb-4">Sidebar</h2>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-blue-500 hover:underline">Current Weather</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-blue-500 hover:underline">Forecast</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-blue-500 hover:underline">Radar</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-blue-500 hover:underline">Maps</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Weather Content -->
+            <div class="col-span-2">
+                <div class="bg-white rounded-lg p-4">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4 flex justify-center">Welcome to WeatherWise</h2>
+                        <p class="mb-4">Get the latest weather updates and forecasts for your location.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2 flex justify-center">Current Weather</h3>
+                            <div class="flex items-center space-x-4">
+                                <div>
+                                    <p class="font-bold text-3xl" id="location"></p>
+                                    <p class="text-blue-500 text-2xl" id="description"></p>
+                                    <p class="text-blue-500 text-2xl" id="temperature"></p>
+                                    <p class="text-blue-500 text-2xl" id="wind"></p>
+                                    <p class="text-blue-500 text-2xl" id="humidity"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Forecast</h3>
+                            <ul class="" id="forecastList">
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Additional Information</h3>
+                        <div class="grid grid-cols-2 gap-4 text-xl">
+                            <div>
+                                <h4 class="font-bold">Wind</h4>
+                                <p class="text-blue-500" id="windInfo"></p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Humidity</h4>
+                                <p class="text-blue-500" id="humidityInfo"></p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Pressure</h4>
+                                <p class="text-blue-500" id="pressureInfo"></p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Sunrise</h4>
+                                <p class="text-blue-500" id="sunriseInfo"></p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Sunset</h4>
+                                <p class="text-blue-500" id="sunsetInfo"></p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">UV Index</h4>
+                                <p class="text-blue-500" id="uvIndexInfo"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-500 text-center text-gray-200 py-4">
+        <div class="container mx-auto">
+            &copy; 2023 WeatherWise. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../src/index.js"></script>
+
+</body>
+
+</html>

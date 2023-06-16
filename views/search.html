@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>My test document</title>
+    <!--  You insert references here. -->
+
+    <script src="../src/services/weatherService.js" rel="calls for weather"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../src/hooks/usefulFunctions.js" rel="functions I can use"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #fff;
+        width: 800px;
+        height: 500px;
+        margin: 100px auto;
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Additional styles for the modal content */
+    .modal-content .date {
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .modal-content div {
+        margin-bottom: 5px;
+    }
+</style>
+
+<body>
+
+    <div class="form p-4 flex justify-center items-center">
+        <form>
+            <input type="number" id="fieldOne" class="border rounded p-2 mr-2" />
+            <button type="submit" id="submitButton"
+                class="bg-blue-500 text-white hover:bg-blue-700 font-semibold px-4 py-2 rounded">
+                Search By Zip
+            </button>
+        </form>
+    </div>
+    <div class="card-container grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-5">
+        <template class="weather-template">
+            <div class="card border border-gray-300 shadow-lg rounded-lg p-4">
+                <h5 class="card-title text-lg font-semibold mb-2 flex justify-center weather-date">Card title</h5>
+                <div class="card-text mb-2 weather-temperature">
+                    Temperature goes here
+                </div>
+                <div class="card-text mb-2 weather-feelslike">
+                    Feels Like goes here
+                </div>
+                <div class="card-text mb-2 weather-precipitation">
+                    Precipitation goes here
+                </div>
+                <div class="card-text mb-2 weather-cloud-coverage">
+                    Cloud Coverage goes here
+                </div>
+                <div class="card-text mb-2 weather-visibility">
+                    Visibility goes here
+                </div>
+                <div class="flex justify-between">
+                    <button type="button"
+                        class="view-more-button hover:bg-blue-700 bg-blue-500 text-white font-semibold px-4 py-2 mr-20 rounded">
+                        View More
+                    </button>
+                    <button type="button"
+                        class="view-by-hour-button hover:bg-blue-700 bg-blue-500 text-white font-semibold px-4 py-2 rounded">
+                        View By Hour
+                    </button>
+                </div>
+            </div>
+        </template>
+
+
+    </div>
+
+    <div id="myModal" class="modal hidden fixed z-50 inset-0 flex items-center justify-center">
+        <div class="modal-content bg-white shadow-lg rounded p-4">
+            <span class="close cursor-pointer absolute top-0 right-0 mt-2 mr-2 text-gray-600">&times;</span>
+        </div>
+    </div>
+
+    <script src="../src/components/search.js"></script>
+
+</body>
+
+</html>

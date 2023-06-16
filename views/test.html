@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src="../src/services/weatherService.js" rel="calls for weather"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="test-class">
+        Hello there!
+    </div>
+
+    <script>
+        window.onload = function () {
+            weatherService.getByDate('2330 Paseo De Laura Oceanside, CA', '2023-06-16', '2023-06-18')
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(error => console.error({ error: error }));
+        }
+
+        document.querySelector('test-class').addEventListener('click', serviceCall)
+
+        const serviceCall = () => {
+            weatherService.getBySearch('London, UK')
+                .then((response) => {
+                    console.log(response)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        }
+    </script>
+</body>
+
+</html>
